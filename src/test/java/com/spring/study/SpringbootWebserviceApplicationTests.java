@@ -1,13 +1,15 @@
 package com.spring.study;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootWebserviceApplicationTests {
+class SpringbootWebserviceApplicationTests
+{
 
 	@Test
-	void contextLoads() {
+	void contextLoads()
+	{
 	}
 
 }
