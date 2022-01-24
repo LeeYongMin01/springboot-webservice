@@ -29,8 +29,8 @@ public class PostsRepositoryTest
 	public void save()
 	{
 		// given
-		String title = "테스트 게시글";
-		String content = "테스트 본문";
+		String title = "title";
+		String content = "content";
 
 		postsRepository.save(Posts.builder().title(title).content(content).author("vbn0213@gmail.com").build());
 
