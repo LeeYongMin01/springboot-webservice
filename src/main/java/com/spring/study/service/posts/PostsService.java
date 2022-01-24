@@ -1,10 +1,14 @@
 package com.spring.study.service.posts;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.study.domain.posts.Posts;
 import com.spring.study.domain.posts.PostsRepository;
+import com.spring.study.web.dto.PostsListResponseDto;
 import com.spring.study.web.dto.PostsResponseDto;
 import com.spring.study.web.dto.PostsSaveRequestDto;
 import com.spring.study.web.dto.PostsUpdateRequestDto;
@@ -40,5 +44,11 @@ public class PostsService
 			() -> new IllegalArgumentException("No Object. id=" + id));
 
 		return new PostsResponseDto(entity);
+	}
+
+	@Transactional(readOnly = true)
+	public List<PostsListResponseDto> findAllDesc()
+	{
+		return postsRepository.findAllDesc().stream().map(PostsListResponseDto::new).collect(Collectors.toList());
 	}
 }
